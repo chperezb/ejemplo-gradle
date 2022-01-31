@@ -50,7 +50,7 @@ def call(){
       sh 'nohup bash java -jar DevOpsUsach2020-0.0.1.jar & >/dev/null'
   }
   stage("Paso 9: Testear Artefacto - Dormir(Esperar 20sg) "){
-      sh "sleep 60 && curl -X GET 'http://localhost:8081/rest/mscovid/test?msg=testing'"
+      sh "sleep 70 && curl -X GET 'http://localhost:8081/rest/mscovid/test?msg=testing'"
   }
 }
 return this;
