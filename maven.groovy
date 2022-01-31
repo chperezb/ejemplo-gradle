@@ -19,7 +19,9 @@ def call(){
           sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=job-github-sonar-1 -Dsonar.java.binaries=build'
       }
   }
-  stage("Paso 5: Curl Springboot Gradle sleep 20"){
+  env.TAREA="Paso 5: Curl Springboot Gradle sleep 20"
+  stage("$env.TAREA"){
+      env.TAREA = $nameStage
       sh "gradle bootRun&"
       sh "sleep 10 && curl -X GET 'http://localhost:8081/rest/mscovid/test?msg=testing'"
   }
